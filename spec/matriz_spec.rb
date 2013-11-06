@@ -14,11 +14,32 @@ describe Matriz do
     it "es una matriz cuadrada" do
        A.cuadrada.should == true
     end
-    it "Se debe poder imprimir la matriz"do
+    it "Se puede imprimir la matriz"do
        A.to_s.should == "[1, 2][2, 3]"
     end
   end
 
+   describe "operaciones algebraicas" do
+    it "se pueden sumar dos matrices" do
+
+    (A+B).to_s.should=="[2, 4][4, 6]"
+    end
+    it "se pueden multiplicar dos matrices" do
+        (A*B).to_s.should=="[5, 8][8, 13]"
+    end
+    it "se pueden restar dos matrices" do
+       (A-B).to_s.should=="[0, 0][0, 0]"
+
+    end
+   it "Se puede dividir una matriz por un escalar" do
+       (A/2).to_s.should =="[0.5, 1.0][1.0, 1.5]"
+   end
+
+    it "Se puede multiplicar una matriz por un escalar" do
+        (A.mult(2)).to_s.should =="[2, 4][4, 6]"
+    end
+
+   end
 
 
 
